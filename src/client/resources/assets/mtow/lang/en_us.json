@@ -1,0 +1,13 @@
+{
+  "mtow.screen.configure_title": "Minecraft TCP Over WebSocket(s) Configuration",
+  "mtow.screen.password_title": "Server Password",
+  "mtow.screen.server_title": "Proxy Server Manager",
+  "mtow.screen.server_botton": "Manage Proxy Server",
+  "mtow.status.label": "Proxy",
+  "mtow.status.off": "OFF",
+  "mtow.status.mix": "Remote Mode",
+  "mtow.status.client": "Local Mode",
+  "mtow.protocol.label": "Protocol",
+  "mtow.protocol.tcp": "TCP",
+  "mtow.protocol.http": "HTTP & WebSocket"
+}
