@@ -4,16 +4,24 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.util.StringRepresentable;
 
 public enum MtowStatus implements StringRepresentable {
-    OFF(false, "off"),
-    MIX(true, "mix"),
-    CLIENT(true, "client")
+    OFF(0, "off"),
+    MIX(1, "remote"),
+    CLIENT(2, "local")
     ;
-    public final boolean enable;
+    private final int id;
     private final String string;
 
-    private MtowStatus(boolean enable, String string) {
-        this.enable = enable;
+    private MtowStatus(int id, String string) {
+        this.id = id;
         this.string = string;
+    }
+
+    public boolean serverListEnable() {
+        return id == 2;
+    }
+
+    public boolean mtowConfigureEnable() {
+        return id != 0;
     }
 
     public Component getDisplayName() {

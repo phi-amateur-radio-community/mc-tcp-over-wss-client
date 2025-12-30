@@ -2,6 +2,7 @@ package org.phiarc.mixin.client;
 
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
 import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.ManageServerScreen;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -25,6 +26,7 @@ public class ManageServerScreenMixin extends Screen {
     protected BooleanConsumer callback;
 
     @Shadow
+    protected EditBox ipEdit;
 
 	@Inject(at = @At("TAIL"), method = "init")
 	private void onInit(CallbackInfo info) {
