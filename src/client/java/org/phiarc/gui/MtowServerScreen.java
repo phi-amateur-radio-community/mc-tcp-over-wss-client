@@ -1,16 +1,8 @@
 package org.phiarc.gui;
 
-import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
-import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.components.StringWidget;
 import net.minecraft.client.gui.layouts.HeaderAndFooterLayout;
-import net.minecraft.client.gui.layouts.LayoutSettings;
-import net.minecraft.client.gui.layouts.LinearLayout;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.gui.screens.multiplayer.JoinMultiplayerScreen;
-import net.minecraft.client.gui.screens.multiplayer.ServerSelectionList;
-import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 
 import java.util.ArrayList;
