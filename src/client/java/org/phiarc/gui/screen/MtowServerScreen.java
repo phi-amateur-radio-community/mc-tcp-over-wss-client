@@ -1,21 +1,20 @@
-package org.phiarc.gui;
+package org.phiarc.gui.screen;
 
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.layouts.HeaderAndFooterLayout;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
-
-import java.util.ArrayList;
+import org.phiarc.gui.MtowSelectionList;
 
 public class MtowServerScreen extends Screen {
-    private final Screen lastScreen;
+    private final MtowConfigurationScreen lastScreen;
 
     private final static Component TITLE = Component.translatable("mtow.screen.server_title");
 
     protected MtowSelectionList proxyServerList;
-    private HeaderAndFooterLayout layout = new HeaderAndFooterLayout(this, 61, 33);
+    private final HeaderAndFooterLayout layout = new HeaderAndFooterLayout(this, 61, 33);
 
-    protected MtowServerScreen(Screen screen) {
+    protected MtowServerScreen(MtowConfigurationScreen screen) {
         super(TITLE);
         lastScreen = screen;
     }
@@ -23,7 +22,7 @@ public class MtowServerScreen extends Screen {
     protected void init() {
         this.layout.addTitleHeader(TITLE, this.font);
         this.proxyServerList = (MtowSelectionList) this.layout.addToContents(new MtowSelectionList(this, this.minecraft, this.width, this.layout.getContentHeight(), this.layout.getHeaderHeight(), 18));
-        this.proxyServerList.initProxyList(new ArrayList<>());
+        this.proxyServerList.initProxyList(lastScreen.configuration.proxyList);
 
         this.layout.visitWidgets((guiEventListener) -> {
             AbstractWidget var10000 = (AbstractWidget)this.addRenderableWidget(guiEventListener);
@@ -40,6 +39,7 @@ public class MtowServerScreen extends Screen {
 
     public void onClose() {
         this.proxyServerList.onClose();
+        this.lastScreen.configuration.proxyList = this.proxyServerList.getProxyList();
         assert this.minecraft != null;
         this.minecraft.setScreen(this.lastScreen);
     }

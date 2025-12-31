@@ -3,7 +3,8 @@
 	"package": "org.phiarc.mixin.client",
 	"compatibilityLevel": "JAVA_21",
 	"client": [
-		"ManageServerScreenMixin"
+		"ManageServerScreenMixin",
+        "ManageServerScreenAccessor"
 	],
 	"injectors": {
 		"defaultRequire": 1

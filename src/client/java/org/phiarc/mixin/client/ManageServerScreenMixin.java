@@ -6,7 +6,7 @@ import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.ManageServerScreen;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
-import org.phiarc.gui.MtowConfigurationScreen;
+import org.phiarc.gui.screen.MtowConfigurationScreen;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -32,7 +32,7 @@ public class ManageServerScreenMixin extends Screen {
 	private void onInit(CallbackInfo info) {
         this.addRenderableWidget(Button.builder(Component.literal("WS"), (button) -> {
             assert this.minecraft != null;
-            this.minecraft.setScreen(new MtowConfigurationScreen(this));
+            this.minecraft.setScreen(new MtowConfigurationScreen(this, this.ipEdit.getValue()));
         }).bounds(this.width / 2 + 100 + 5, 106, 20, 20).build());
 	}
 

@@ -1,4 +1,4 @@
-package org.phiarc.gui;
+package org.phiarc.gui.screen;
 
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.layouts.HeaderAndFooterLayout;
@@ -10,7 +10,7 @@ public class MtowProxyRulesScreen extends Screen {
 
     private final static Component TITLE = Component.translatable("mtow.screen.rule_title");
 
-    private HeaderAndFooterLayout layout = new HeaderAndFooterLayout(this, 61, 33);
+    private final HeaderAndFooterLayout layout = new HeaderAndFooterLayout(this, 61, 33);
 
     protected MtowProxyRulesScreen(Screen screen) {
         super(TITLE);
